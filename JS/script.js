@@ -1,24 +1,33 @@
+let title;
+let author;
+let publishYear;
+let genre;
+let cover;
+
 const getBooksFiltered = (filterType, filter) => {
   fetch(
     "https://openlibrary.org/search.json?" +
       filterType +
       "=" +
       filter +
-      "&limit=5"
+      "&limit=10"
   )
     .then((response) => response.json())
     .then((data) => {
       for (let i = 0; i < data.docs.length; i++) {
-        console.log("Title: " + data.docs[i].title);
-        console.log("Authors: " + data.docs[i].author_name);
-        console.log("First publish year: " + data.docs[i].first_publish_year);
+        title = "Title: " + data.docs[i].title;
+        author = "Authors: " + data.docs[i].author_name;
+        publishYear = "First publish year: " + data.docs[i].first_publish_year;
+        genre = "";
+        cover = `https://covers.openlibrary.org/b/olid/${data.docs[i].cover_edition_key}-M.jpg`;
       }
+      console.log(title, author, publishYear, genre, cover);
       console.log(data);
     });
 };
 
-const createBook = (title, author, year, genre, image) => {};
+const createBook = (title, author, year, genre, cover) => {};
 
-getBooksFiltered("author", "Tolkien");
+getBooksFiltered("author", "Rowling");
 
 const getFilter = () => {};
