@@ -36,7 +36,7 @@ const createBook = (title, author, year, cover, index) => {
           <h2 class="tittle">Title: ${title}</h2>
           <p class="publish">Published: ${year}</p>
           <p class="author">Author: ${author}</p>
-          <button id="" class="button_add">Add</button>
+          <button id="button${index}" class="button_add">Add</button>
         </section>
       </article>
    `;
