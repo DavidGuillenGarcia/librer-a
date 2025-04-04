@@ -7,7 +7,7 @@ const searchInput = document.getElementById("search_value");
 const searchBtn = document.getElementById("search_button");
 const booksContainer = document.getElementById("main_books");
 let currentFilter = "title";
-const selectedFilter = document.getElementById("select");
+const selectedFilter = document.getElementById("search_select");
 
 const getBooksFiltered = (filterType, filter) => {
   fetch(
