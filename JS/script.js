@@ -3,6 +3,11 @@ let author;
 let publishYear;
 let genre;
 let cover;
+const searchInput = document.getElementById("search_value");
+const searchBtn = document.getElementById("search_button");
+const booksContainer = document.getElementById("main_books");
+let currentFilter = "title";
+const selectedFilter = document.getElementById("select");
 
 const getBooksFiltered = (filterType, filter) => {
   fetch(
@@ -28,6 +33,13 @@ const getBooksFiltered = (filterType, filter) => {
 
 const createBook = (title, author, year, cover) => {};
 
-getBooksFiltered("author", "Rowling");
+const searchBook = () => {
+  getBooksFiltered(currentFilter, searchInput.value);
+};
 
-const getFilter = () => {};
+const getFilter = (event) => {
+  currentFilter = event.target.value;
+};
+
+selectedFilter.addEventListener("change", getFilter);
+searchBtn.addEventListener("click", searchBook);
