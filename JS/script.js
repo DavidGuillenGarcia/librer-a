@@ -17,6 +17,7 @@ const getBooksFiltered = (filterType, filter) => {
   )
     .then((response) => response.json())
     .then((data) => {
+      booksContainer.innerHTML = "";
       for (let i = 0; i < data.docs.length; i++) {
          if (!data.docs[i].cover_edition_key) {
           cover = "./sources/image/libros.png";
