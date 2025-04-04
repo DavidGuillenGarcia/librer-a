@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Librería</title>
+    <title>Custom Library</title>
 
     <link
       rel="shortcut icon"
@@ -26,11 +26,10 @@
       <label for="search_value"><i class="fa-solid fa-book"></i></label>
       <input type="text" name="" id="search_value" placeholder="-> ..." />
       <select name="" id="search_select">
-        <option value="tittle">
+        <option value="title">
           <svg>·</svg>
           <span> By Title</span>
         </option>
-
         <option value="author">
           <svg>·</svg>
           <span> By Author</span>
@@ -39,12 +38,12 @@
       <button id="search_button">
         <i class="fa-solid fa-magnifying-glass"></i>
       </button>
-      <button id="search_founed" class="hidden">
+      <button id="search_founed">
         <i class="fa-solid fa-cart-shopping"></i>
       </button>
     </header>
-        <section id="main_books">
-    </section>
+    <section id="main_books"></section>
+    <section id="main_marcket" class="hidden"></section>
     
   </main>
   <script src="./JS/script.js"></script>

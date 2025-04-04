@@ -11,14 +11,10 @@
   --colorSearched: #fff;
   --colorShadow: 1.5px 1.5px 3px #000;
   --colorShadow2: 5px 5px 5px 1px #000;
-}
-
-html, body{
-  height: 100%;
-  overflow: hidden;
-}
+} 
 
 #main{
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,13 +23,14 @@ html, body{
   background: var(--colorMain);
 
   min-height: 100vh;
-
-  overflow-y: auto;
-
 }
 
 header{
-  width: fit-content;
+  position: absolute;
+  top: 5px;
+  width: 35em;
+border-radius: 20px;
+  z-index: 2;
 }
 
 #main_search{
@@ -43,7 +40,6 @@ header{
   justify-content: center;
   align-items: center;
 
-  width: 100%;
   height: 4rem;
 
   padding: 14px 0 14px 0;
@@ -53,8 +49,11 @@ header{
 
 #main_search label{
   margin: 0 0.5em 0 0;
+
   color: #6f6e70;
-  background: var(--colorSearched);
+  background: rgb(183,183,183);
+  background: linear-gradient(90deg, rgba(183,183,183,1) 0%, rgba(213,213,215,1) 35%, rgba(252,252,252,1) 100%);
+
   padding: 5px 6px 3px 5px;
   text-align: center;
 
@@ -67,7 +66,9 @@ header{
   padding: 5px 0 3px 10px;
   margin: 0 0.5em 0 0;
 
-  background: var(--colorSearched);
+  color: #6f6e70;
+  background: rgb(183,183,183);
+  background: linear-gradient(90deg, rgba(183,183,183,1) 0%, rgba(213,213,215,1) 35%, rgba(252,252,252,1) 100%);
 
   font-size: 16px;
   font-weight: bold;
@@ -80,8 +81,8 @@ header{
   padding: 3px 3px 3px 3px;
   margin: 0 0.5em 0 0;
 
-
-  background: var(--colorSearched);
+  background: rgb(183,183,183);
+  background: linear-gradient(90deg, rgba(183,183,183,1) 0%, rgba(213,213,215,1) 35%, rgba(252,252,252,1) 100%);
 
   font-size: 16px;
   font-weight: bold;
@@ -89,12 +90,18 @@ header{
   box-shadow: var(--colorShadow);
 }
 
+#search_select option{
+  color: #000;
+  font-weight: bold;
+}
+
 #main_search button{
   margin: 0 0.5em 0 0;
   padding: 5px 6px 3px 5px;
 
   color: #6f6e70;
-  background: var(--colorSearched);
+  background: rgb(183,183,183);
+  background: linear-gradient(90deg, rgba(183,183,183,1) 0%, rgba(213,213,215,1) 35%, rgba(252,252,252,1) 100%);
 
   text-align: center;
   border-radius: 50%;
@@ -109,14 +116,14 @@ header{
   margin: 0 0.5em 0 0.5em;
 }
 
-.hidden {
-  display: none;
-}
-
 #main_books{
 
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 1em;
-  
+  justify-content: center;
+  align-items: center;
+  margin-top:10em;
+  margin-bottom: 2em;
+
+  z-index: 1;
 }
