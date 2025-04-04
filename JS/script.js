@@ -1,8 +1,4 @@
-let title;
-let author;
-let publishYear;
-let genre;
-let cover;
+let index = 0;
 const searchInput = document.getElementById("search_value");
 const searchBtn = document.getElementById("search_button");
 const booksContainer = document.getElementById("main_books");
@@ -20,18 +16,31 @@ const getBooksFiltered = (filterType, filter) => {
     .then((response) => response.json())
     .then((data) => {
       for (let i = 0; i < data.docs.length; i++) {
-        title = "Title: " + data.docs[i].title;
-        author = "Authors: " + data.docs[i].author_name;
-        publishYear = "First publish year: " + data.docs[i].first_publish_year;
-        cover = `https://covers.openlibrary.org/b/olid/${data.docs[i].cover_edition_key}-M.jpg`;
-        console.log(title, author, publishYear, genre, cover);
+        createBook(
+          data.docs[i].title,
+          data.docs[i].author_name,
+          data.docs[i].first_publish_year,
+          `https://covers.openlibrary.org/b/olid/${data.docs[i].cover_edition_key}-M.jpg`,
+          index
+        );
+        index++;
       }
-
-      console.log(data);
     });
 };
 
-const createBook = (title, author, year, cover) => {};
+const createBook = (title, author, year, cover, index) => {
+  booksContainer.innerHTML += `
+      <article id="book${index}" class="book">
+        <img class="image_bookc" src="${cover}" alt="./sources/image/libros.png" />
+        <section>
+          <h2 class="tittle">Title: ${title}</h2>
+          <p class="publish">Published: ${year}</p>
+          <p class="author">Author: ${author}</p>
+          <button id="" class="button_add">Add</button>
+        </section>
+      </article>
+   `;
+};
 
 const searchBook = () => {
   getBooksFiltered(currentFilter, searchInput.value);
