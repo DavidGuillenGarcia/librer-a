@@ -39,10 +39,13 @@ const createBook = (title, author, year, cover, index) => {
       <article id="book${index}" class="book">
         <img class="image_bookc" src="${cover}" alt="" />
         <section>
-          <h2 class="tittle">Title: ${title}</h2>
-          <p class="publish">Published: ${year}</p>
-          <p class="author">Author: ${author}</p>
-          <button id="button${index}" class="button_add">Add</button>
+          <p class="inithial">Title</p>
+          <h2 class="tittle"> ${title}</h2>
+          <p class="inithial">Published</p>
+          <p class="publish"> ${year}</p>
+          <p class="inithial">Author</p>
+          <p class="author"> ${author}</p>
+          <button id="button${index}" class="button_add"><i class="fa-solid fa-circle-plus"></i></button>
         </section>
       </article>
    `;
